@@ -7,9 +7,13 @@ const ingredients = [
   "Condiments",
 ];
 const listIngredients = document.querySelector("#ingredients");
-ingredients.map(function (item) {
+
+const listIngredientsMarkup = ingredients.map((item) => {
   const li = document.createElement("li");
   li.classList.add("item");
   li.textContent = item;
-  listIngredients.appendChild(li);
+
+  return li;
 });
+
+listIngredients.append(...listIngredientsMarkup);
